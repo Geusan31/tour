@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wisata</title>
+    <title>Wisata Nusantara</title>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
-    <section>
+    <section id="home">
       <header>
         <div class="hamburger" id="hamburger">
           <svg
@@ -37,39 +37,39 @@
             />
           </svg>
         </div>
+        <nav id="navbar">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#tours">Wisata</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </header>
 
-      <nav id="navbar">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#tours">Tours</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
       <div class="container-welcome">
         <h1>Selamat Datang di Wisata Nusantara</h1>
+        <button id="show-more">Show More</button>
       </div>
     </section>
 
     <main>
-      <div id="content"></div>
+      <div class="container-content">
+        <div>
+          <h1 id="destinations">Destinasi</h1>
+          <div id="contentDestinasi"></div>
+        </div>
+        <div>
+          <h1 id="tours">Wisata</h1>
+          <div id="content"></div>
+        </div>
+      </div>
       <aside>
-        <h3>Promosi Musim Ini</h3>
-        <p>
-          Dapatkan diskon 20% untuk paket tur ke Bali dan Yogyakarta selama
-          bulan ini!
-        </p>
-        <h3>Tur Unggulan</h3>
-        <p>
-          Ikuti tur eksklusif kami ke Raja Ampat dan nikmati keindahan bawah
-          laut yang menakjubkan.
-        </p>
+        <img src="/assets/img/bannerPromo1.png" alt="Banner Promo">
       </aside>
     </main>
 
-    <footer>
+    <footer id="contact">
       <div class="content_footer">
         <p>Kontak kami: info@wisatanusantara.com</p>
         <p>

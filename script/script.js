@@ -3,6 +3,12 @@ const hamburger = document.getElementById("hamburger");
 const navbar = document.getElementById("navbar");
 const windowWidth = window.innerWidth;
 
+// Toggle Navbar
+hamburger.addEventListener("click", () => {
+  navbar.classList.toggle("show");
+});
+
+// Hapus class show ketika window resize
 window.addEventListener("resize", () => {
   if (windowWidth > 525) {
     if (navbar.classList.contains("show")) {
@@ -11,6 +17,7 @@ window.addEventListener("resize", () => {
   }
 });
 
+// Tambahkan class active ketika scroll melebihi 250
 window.addEventListener("scroll", () => {
   const navbar = document.getElementById("navbar");
   const scrollTop = window.scrollY;
@@ -21,11 +28,60 @@ window.addEventListener("scroll", () => {
   }
 });
 
-hamburger.addEventListener("click", () => {
-  navbar.classList.toggle("show");
+// Show more
+const showMoreBtn = document.getElementById("show-more");
+
+showMoreBtn.addEventListener("click", () => {
+  window.scrollBy({
+    top: 250,
+    behavior: "smooth",
+  });
 });
 
-// Mapping Data
+// Mapping Data Wisata
+const dataDestinasi = [
+  {
+    judul: "Pantai Bali",
+    image: "/assets/img/pantai-bali.jpg",
+  },
+  {
+    judul: "Borobudur",
+    image: "/assets/img/candi-yogya.jpg",
+  },
+  {
+    judul: "Labuan Bajo",
+    image: "/assets/img/labuan-bajo.jpeg",
+  },
+  {
+    judul: "Morotai",
+    image: "/assets/img/morotai.png",
+  },
+  {
+    judul: "Raja Ampat",
+    image: "/assets/img/raja-ampat.jpg",
+  },
+];
+
+function mappingDataDestinasi() {
+  const content = document.getElementById("contentDestinasi");
+  dataDestinasi.forEach((e) => {
+    const card = document.createElement("div");
+    const img_destination = document.createElement("img");
+    const h5 = document.createElement("h5");
+
+    card.classList.add("card");
+    img_destination.classList.add("img_destination");
+    img_destination.src = e.image;
+    h5.textContent = e.judul;
+
+    card.appendChild(img_destination);
+    card.appendChild(h5);
+    content.appendChild(card);
+  });
+}
+window.onload = mappingDataDestinasi();
+
+// Mapping Data Wisata
 const dataWisata = [
   {
     judul: "Keindahan Bali",
@@ -41,7 +97,7 @@ const dataWisata = [
   },
 ];
 
-function mappingData() {
+function mappingDataWisata() {
   const content = document.getElementById("content");
   dataWisata.forEach((e) => {
     const article = document.createElement("article");
@@ -69,4 +125,4 @@ function mappingData() {
     content.appendChild(article);
   });
 }
-window.onload = mappingData();
+window.onload = mappingDataWisata();

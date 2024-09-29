@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
@@ -16,6 +19,7 @@ header {
   display: flex;
   justify-content: flex-end;
   padding: 20px;
+  z-index: 10;
 }
 
 header h3 {
@@ -44,9 +48,10 @@ nav {
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   padding: 15px 20px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
 nav ul {
@@ -103,13 +108,13 @@ a {
 
 section {
   width: 100%;
-  height: 50vh;
+  height: 70vh;
   background-color: red;
   padding: 20px 80px 0 80px;
   background-image: linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.5) 90%,
+      rgba(0, 0, 0, 0.6),
+      rgba(255, 255, 255, 0.1) 90%,
       rgba(255, 255, 255, 1)
     ),
     url(/assets/img/hero_bg.jpeg);
@@ -121,14 +126,26 @@ section {
 .container-welcome {
   width: 100%;
   height: 100%;
-  /* background-color: red; */
   display: flex;
+  flex-direction: column;
+  gap: 15px;
   justify-content: center;
   align-items: center;
 }
 
 .container-welcome h1 {
   font-size: 40px;
+  color: white;
+  font-weight: 600;
+}
+
+.container-welcome button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 255, 0.3);
+  border: 3px solid blue;
+  cursor: pointer;
+  color: white;
 }
 
 main {
@@ -136,6 +153,53 @@ main {
   display: flex;
   gap: 30px;
   padding-top: 50px;
+}
+
+.container-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#tours {
+  margin-bottom: 10px;
+}
+
+#contentDestinasi {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 150px;
+  height: 200px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card h5 {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 2;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  width: max-content;
+  background-color: rgba(136, 136, 136,.7);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 article {
@@ -179,43 +243,19 @@ article:nth-child(even) .container {
 }
 
 aside {
+  width: 100%;
+  height: 100%;
   background: #ff7b2f;
-  padding: 20px;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
   color: #fff;
-  margin-top: 20px;
-  height: max-content;
 }
 
-aside h3 {
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-aside p {
-  color: #333;
-  line-height: 1.6;
-}
-
-aside p:first-of-type {
-  font-weight: bold;
-  background: #ffa26c;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-aside h3:nth-child(3) {
-  margin-top: 20px;
-}
-
-aside p:last-of-type {
-  background: #ffa26c;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 10px;
+aside img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 footer {
@@ -239,14 +279,46 @@ footer p:not(:last-child) {
   section {
     padding: 20px 30px 20px 30px;
   }
+
+  .container {
+    align-items: center;
+    flex-direction: column !important;
+  }
+
+  .container img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 840px) {
+  main {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
 }
 
 @media (max-width: 525px) {
+  .container-welcome {
+    align-items: start;
+  }
+
+  .container-welcome h1 {
+    font-size: 30px;
+  }
+
+  main {
+    margin: 0 20px;
+  }
+
   .hamburger {
     display: flex;
   }
 
   nav {
     display: none;
+  }
+
+  footer {
+    padding: 5px 20px;
   }
 }
