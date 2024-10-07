@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
-    <section id="home">
-      <header>
+    <header id="home">
+      <div class="container_hamburger">
         <div class="hamburger" id="hamburger">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -37,36 +37,104 @@
             />
           </svg>
         </div>
-        <nav id="navbar">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#destinations">Destinations</a></li>
-            <li><a href="#tours">Wisata</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-
+      </div>
+      <nav id="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#tours">Wisata</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
       <div class="container-welcome">
         <h1>Selamat Datang di Wisata Nusantara</h1>
         <button id="show-more">Show More</button>
       </div>
-    </section>
+    </header>
 
     <main>
-      <div class="container-content">
+      <aside>
+        <img src="/assets/img/bannerPromo1.png" alt="Banner Promo" />
+      </aside>
+      <article class="container-content">
         <div>
           <h1 id="destinations">Destinasi</h1>
-          <div id="contentDestinasi"></div>
+          <div id="contentDestinasi">
+            <div class="card">
+              <img src="/assets/img/pantai-bali.jpg" alt="Pantai Bali" />
+              <h5>Pantai Bali</h5>
+            </div>
+            <div class="card">
+              <img src="/assets/img/candi-yogya.jpg" alt="Borobudur" />
+              <h5>Borobudur</h5>
+            </div>
+            <div class="card">
+              <img src="/assets/img/labuan-bajo.jpeg" alt="Labuan Bajo" />
+              <h5>Labuan Bajo</h5>
+            </div>
+            <div class="card">
+              <img src="/assets/img/morotai.png" alt="Morotai" />
+              <h5>Morotai</h5>
+            </div>
+            <div class="card">
+              <img src="/assets/img/raja-ampat.jpg" alt="Raja Ampat" />
+              <h5>Raja Ampat</h5>
+            </div>
+          </div>
         </div>
         <div>
           <h1 id="tours">Wisata</h1>
-          <div id="content"></div>
+          <div id="content">
+            <div class="container-article">
+              <h2>Keindahan Bali</h2>
+              <div class="container">
+                <img
+                  alt="Pantai di Bali"
+                  width="350"
+                  src="/assets/img/pantai-bali.jpg"
+                />
+                <p>
+                  Bali terkenal dengan pantainya yang indah, budaya yang kaya,
+                  dan kehidupan malam yang meriah. Pulau ini menawarkan berbagai
+                  aktivitas mulai dari berselancar di pantai Kuta, menikmati
+                  matahari terbenam di Tanah Lot, hingga menjelajahi keindahan
+                  bawah laut di Nusa Penida. Selain itu, Bali juga dikenal
+                  dengan seni dan budayanya yang unik, seperti tari Kecak dan
+                  upacara keagamaan di Pura Besakih. Temukan lebih banyak
+                  tentang Bali<a href="https://bali.com/id/" target="_blank">
+                    di sini</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="container-article">
+              <h2>Pesona Yogyakarta</h2>
+              <div class="container">
+                <img
+                  alt="Pantai di Bali"
+                  width="350"
+                  src="/assets/img/candi-yogya.jpg"
+                />
+                <p>
+                  Yogyakarta menawarkan pengalaman budaya yang unik dengan
+                  candi-candi bersejarah dan seni tradisional. Kota ini adalah
+                  rumah bagi Candi Borobudur, salah satu situs warisan dunia
+                  UNESCO, dan Candi Prambanan yang megah. Selain itu, Yogyakarta
+                  juga dikenal dengan kerajinan batiknya yang indah dan kuliner
+                  khas seperti gudeg. Jangan lewatkan kesempatan untuk
+                  mengunjungi Keraton Yogyakarta dan merasakan suasana kerajaan
+                  yang masih kental. Baca lebih lanjut tentang Yogyakarta<a
+                    href="https://www.indonesia.travel/id/en/destinations/java/yogyakarta.html"
+                    target="_blank"
+                  >
+                    di sini</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <aside>
-        <img src="/assets/img/bannerPromo1.png" alt="Banner Promo">
-      </aside>
+      </article>
     </main>
 
     <footer id="contact">
